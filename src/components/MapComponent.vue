@@ -1,8 +1,6 @@
 <script setup></script>
 <template>
   <div>
-    <h2>MAPA</h2>
-    <button>teste</button>
     <div class="mapouter">
       <div class="gmap_canvas">
         <iframe
@@ -14,9 +12,7 @@
           scrolling="no"
           marginheight="0"
           marginwidth="0"
-        ></iframe
-        ><a href="https://123movies-to.org"></a><br />
-        ><a href="https://www.embedgooglemap.net">add google maps</a>
+        ></iframe>
       </div>
     </div>
   </div>

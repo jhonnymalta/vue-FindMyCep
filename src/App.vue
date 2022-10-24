@@ -3,26 +3,29 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-    <h1>Vue FindMyCep</h1>
+  <div class="grid grid-cols-12 max-h-full">
+    <header
+      class="col-span-3 flex flex-col bg-[#030620] justify-center max-h-screen"
+    >
+      <img
+        alt="Vue logo"
+        class="logo mb-4 mx-auto"
+        src="@/assets/logo.svg"
+        width="150"
+        height="150"
+      />
+      <h1 class="text-3xl text-white mb-2 mx-auto">Vue FindMyCep</h1>
 
-    <div class="">
-      <nav>
-        <RouterLink to="/">Home |</RouterLink>
-        <RouterLink to="/cep"> Cep |</RouterLink>
-        <RouterLink to="/mylocations"> My Locations</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+      <div class="text-white mx-auto">
+        <nav>
+          <RouterLink to="/">Home |</RouterLink>
+          <RouterLink to="/cep"> Cep |</RouterLink>
+          <RouterLink to="/mylocations"> My Locations</RouterLink>
+        </nav>
+      </div>
+    </header>
+    <RouterView class="max-h-screen overflow-x-auto col-span-9" />
+  </div>
 </template>
 
 <style scoped></style>
