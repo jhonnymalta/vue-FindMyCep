@@ -4,7 +4,7 @@
   >
     <div
       class="flex justify-center items-center w-[150px]"
-      :class="`bg-${bgColor}-500`"
+      :class="`bg-cyan-500`"
     >
       <Star class="h-[70px]" />
     </div>
@@ -14,9 +14,11 @@
       </div>
       <div>
         <strong>Endereço:</strong><small class="mx-4">{{ End }}</small
+        ><strong class="ml-4">Complemento:</strong
+        ><small class="ml-2">{{ Complemento }}</small
         ><br />
-        <strong>Cidade:</strong><small>XXXXXXX</small>' '<strong>Cep:</strong
-        ><small>XXXXXXX</small>
+        <strong>Cidade:</strong><small class="ml-2">{{ Cidade }}</small
+        ><strong class="ml-4">Cep:</strong><small class="ml-2">{{ Cep }}</small>
       </div>
     </div>
   </div>
@@ -24,7 +26,7 @@
 
 <script setup>
 import Star from "../components/icons/Star.vue";
-defineProps(["Tag", "End", "bgColor"]);
+defineProps(["Tag", "End", "bgColor", "Cidade", "Cep", "Complemento"]);
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,31 +1,36 @@
 <template>
   <div class="container mx-auto p-4">
     <h1>My Locations</h1>
-    <ul>
-      <li v-for="location in locations" :key="location.Id">
-        <LocationItem
-          :Tag="location.Tag"
-          :End="location.End"
-          :bgColor="location.bgColor"
-        />
-      </li>
-    </ul>
+    <div>
+      <ul>
+        <li v-for="location in mylocations" :key="location.Id">
+          <locationItem
+            :Tag="location.Tag"
+            :End="location.logradouro"
+            :Cidade="location.localidade"
+            :Cep="location.cep"
+            :Complemento="location.complemento"
+            :bgColor="yellow"
+          />
+        </li>
+      </ul>
+    </div>
+    <p>teste</p>
   </div>
 </template>
 
 <script setup>
-import LocationItem from "../components/LocationItem.vue";
 import { ref } from "vue";
+import { useLocationStore } from "@/stores/locationStore.js";
+import locationItem from "@/components/LocationItem.vue";
+import { storeToRefs } from "pinia";
 
-const locations = ref([
-  { Id: 1, Tag: "Casa", End: "Rua cardoso 11", bgColor: "blue" },
-  { Id: 2, Tag: "Trabalho", End: "Av. Afonso Pena", bgColor: "green" },
-]);
+const useLocation = useLocationStore();
 
-const AddToLocations = (location) => {
-  console.log("Chamou metordo");
-  //locations.value.push(location);
-};
+var mylocations = ref([]);
+mylocations = useLocation.locations;
+
+console.log(mylocations[0].End);
 </script>
 
 <style lang="scss" scoped></style>
